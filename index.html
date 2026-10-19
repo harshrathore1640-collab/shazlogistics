@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shaz Logistics — road freight, cargo transportation and business logistics enquiries." />
+  <title>Shaz Logistics | Moving Your Cargo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--red:#c92832;--red-dark:#a91f28;--ink:#252525;--muted:#666;--beige:#f5f0e8;--ivory:#faf8f4;--line:#e8e2d9;--white:#fff;--dark:#202124;--radius:18px;--shadow:0 18px 55px rgba(37,37,37,.09)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button,a{ -webkit-tap-highlight-color:transparent}
+    .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .section{padding:94px 0}
+    .section.soft{background:var(--ivory)}
+    .section.beige{background:var(--beige)}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--red);font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;margin-bottom:14px}
+    .eyebrow:before{content:"";width:25px;height:2px;background:var(--red)}
+    h1,h2,h3,h4{font-family:Manrope,Inter,sans-serif;line-height:1.16;letter-spacing:-.035em}
+    h1{font-size:clamp(2.6rem,5.4vw,4.7rem);max-width:730px}
+    h2{font-size:clamp(2rem,3.7vw,3.1rem)}
+    h3{font-size:1.22rem}
+    p{color:var(--muted)}
+    .section-head{max-width:700px;margin-bottom:42px}
+    .section-head p{margin-top:15px;max-width:620px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:13px 20px;border:1px solid transparent;border-radius:8px;font-weight:700;font-size:.92rem;cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-red{background:var(--red);color:#fff}
+    .btn-red:hover{background:var(--red-dark)}
+    .btn-outline{border-color:rgba(255,255,255,.55);color:#fff;background:rgba(255,255,255,.08)}
+    .btn-light{background:#fff;border-color:var(--line);color:var(--ink)}
+    .btn svg{width:17px;height:17px}
+    .topbar{background:var(--dark);color:#eee;font-size:.8rem;padding:8px 0}
+    .topbar-inner{display:flex;justify-content:space-between;gap:15px;align-items:center}
+    .topbar a{color:#fff}
+    .topbar-right{display:flex;gap:22px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.06);transition:box-shadow .25s}
+    header.scrolled{box-shadow:0 8px 30px rgba(0,0,0,.07)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .brand{display:flex;align-items:center;gap:11px;min-width:max-content}
+    .brand-mark{display:grid;place-items:center;width:43px;height:43px;border-radius:12px;background:var(--red);color:#fff;font:800 1.1rem Manrope;position:relative}
+    .brand-mark:after{content:"";position:absolute;right:-4px;bottom:-4px;width:14px;height:14px;border:3px solid white;border-radius:4px;background:#252525}
+    .brand-name{font:800 1.12rem Manrope;letter-spacing:-.04em}
+    .brand-name span{display:block;font:700 .61rem Inter;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-top:1px}
+    .nav-links{display:flex;align-items:center;gap:clamp(12px,1.8vw,25px);list-style:none}
+    .nav-links a{font-size:.83rem;font-weight:600;color:#444;transition:color .2s}
+    .nav-links a:hover{color:var(--red)}
+    .nav-cta{white-space:nowrap}
+    .menu-toggle{display:none;border:1px solid var(--line);background:#fff;border-radius:8px;width:44px;height:44px;font-size:1.35rem}
+    .hero{position:relative;min-height:650px;display:flex;align-items:center;overflow:hidden;background:#292b2d;color:#fff}
+    .hero-bg{position:absolute;inset:0}
+    .hero-bg img{object-position:center 55%;opacity:.74}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,20,22,.91) 0%,rgba(18,20,22,.73) 48%,rgba(18,20,22,.28) 100%)}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.72fr);gap:50px;align-items:center;padding:75px 0}
+    .hero .eyebrow{color:#f4b7b9}
+    .hero h1{color:#fff}
+    .hero-copy>p{color:#e3e3e3;max-width:600px;margin:22px 0 27px;font-size:1.04rem}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-points{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px}
+    .hero-points span{font-size:.84rem;color:#f4f4f4;display:flex;gap:8px;align-items:center}
+    .check{color:#ffb6ba;font-weight:900}
+    .quote-card{background:#fff;color:var(--ink);padding:27px;border-radius:16px;box-shadow:0 25px 70px rgba(0,0,0,.22)}
+    .quote-card h3{font-size:1.35rem}
+    .quote-card>p{font-size:.87rem;margin:8px 0 19px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.78rem;font-weight:700;color:#454545}
+    input,select,textarea{width:100%;border:1px solid #dedbd5;border-radius:7px;background:#fff;padding:12px 12px;color:var(--ink);outline:none;min-width:0}
+    input:focus,select:focus,textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(201,40,50,.1)}
+    input::placeholder,textarea::placeholder{color:#999}
+    .quote-card .btn{width:100%;margin-top:14px}
+    .form-note{font-size:.72rem;margin-top:9px;color:#888}
+    .trust-strip{background:#fff;border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:25px 18px;display:flex;align-items:center;gap:13px;border-right:1px solid var(--line)}
+    .trust-item:first-child{padding-left:0}
+    .trust-item:last-child{border:0}
+    .icon-box{flex:0 0 44px;width:44px;height:44px;border-radius:12px;background:#fbefef;color:var(--red);display:grid;place-items:center;font-size:1.25rem}
+    .trust-item strong{display:block;font-size:.86rem}
+    .trust-item small{display:block;color:var(--muted);font-size:.74rem;margin-top:3px}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .image-stack{position:relative;padding:0 35px 35px 0}
+    .image-stack .main-image{height:475px;border-radius:var(--radius);overflow:hidden}
+    .image-stack .small-image{position:absolute;width:42%;height:190px;right:0;bottom:0;border:8px solid var(--ivory);border-radius:16px;overflow:hidden}
+    .image-label{position:absolute;left:22px;bottom:22px;background:#fff;border-radius:10px;padding:13px 16px;box-shadow:var(--shadow);font-size:.8rem;font-weight:800}
+    .about-copy p{margin:18px 0}
+    .tick-list{list-style:none;display:grid;gap:12px;margin:24px 0 28px}
+    .tick-list li{display:flex;gap:11px;color:#444;font-size:.93rem}
+    .tick-list li:before{content:"✓";color:var(--red);font-weight:900}
+    .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .service-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;transition:transform .25s,box-shadow .25s}
+    .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .service-image{height:170px;overflow:hidden;background:#eee}
+    .service-image img{transition:transform .5s}
+    .service-card:hover .service-image img{transform:scale(1.05)}
+    .service-content{padding:20px}
+    .service-icon{font-size:1.2rem;color:var(--red);margin-bottom:9px}
+    .service-content h3{font-size:1.08rem}
+    .service-content p{font-size:.83rem;margin:9px 0 16px}
+    .text-link{display:inline-flex;gap:7px;align-items:center;color:var(--red);font-size:.83rem;font-weight:800}
+    .industries-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .industry{min-height:210px;border-radius:13px;position:relative;overflow:hidden;color:#fff;background:#444}
+    .industry img{position:absolute;inset:0;transition:transform .45s}
+    .industry:hover img{transform:scale(1.06)}
+    .industry:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.84),rgba(0,0,0,.04) 85%)}
+    .industry div{position:absolute;z-index:1;left:18px;right:15px;bottom:17px}
+    .industry h3{font-size:1.02rem;color:#fff}
+    .industry p{font-size:.76rem;color:#eee;margin-top:5px}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+    .process-grid:before{content:"";position:absolute;left:11%;right:11%;top:27px;border-top:1px dashed #d6c8b7}
+    .process-step{position:relative;z-index:1}
+    .step-num{width:55px;height:55px;display:grid;place-items:center;border-radius:50%;background:#fff;border:1px solid #e6d7c7;color:var(--red);font:800 1.05rem Manrope;margin-bottom:20px}
+    .process-step h3{font-size:1.08rem;margin-bottom:9px}
+    .process-step p{font-size:.86rem}
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .benefit{background:#fff;border:1px solid #e9e1d7;border-radius:13px;padding:24px}
+    .benefit .icon-box{margin-bottom:18px}
+    .benefit h3{font-size:1.06rem;margin-bottom:8px}
+    .benefit p{font-size:.86rem}
+    .network-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .network-visual{min-height:340px;border-radius:18px;position:relative;overflow:hidden;background:#e9e2d7}
+    .network-visual img{position:absolute;inset:0}
+    .network-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(25,28,31,.62),transparent 70%)}
+    .network-caption{position:absolute;z-index:1;left:25px;bottom:23px;color:#fff}
+    .network-caption strong{display:block;font:800 1.35rem Manrope}
+    .network-caption span{font-size:.82rem;color:#f0f0f0}
+    .route-form{margin-top:23px;padding:20px;background:#fff;border:1px solid var(--line);border-radius:13px}
+    .gallery-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:190px 190px;gap:13px}
+    .gallery-item{border-radius:12px;overflow:hidden;position:relative;background:#ddd}
+    .gallery-item:first-child{grid-row:span 2}
+    .gallery-item img{transition:transform .4s}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item span{position:absolute;bottom:12px;left:13px;color:#fff;font-size:.8rem;font-weight:700;text-shadow:0 2px 8px #000}
+    .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}
+    .contact-info{background:var(--dark);color:#fff;border-radius:16px;padding:32px}
+    .contact-info h3{font-size:1.5rem;color:#fff;margin-bottom:12px}
+    .contact-info>p{color:#c6c6c6;font-size:.9rem}
+    .contact-detail{display:flex;gap:13px;align-items:flex-start;margin-top:24px}
+    .contact-detail .icon-box{background:rgba(255,255,255,.1);color:#ffb5b9}
+    .contact-detail strong{display:block;font-size:.88rem}
+    .contact-detail span,.contact-detail a{display:block;color:#d1d1d1;font-size:.84rem;overflow-wrap:anywhere}
+    .contact-form{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .contact-form h3{font-size:1.5rem}
+    .contact-form>p{font-size:.87rem;margin:8px 0 22px}
+    textarea{resize:vertical;min-height:105px}
+    .contact-form .btn{margin-top:17px}
+    .form-status{font-size:.84rem;color:#187348;margin-top:12px;min-height:1.3em}
+    .cta-band{background:var(--red);color:#fff;padding:43px 0}
+    .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+    .cta-inner h2{font-size:clamp(1.7rem,3vw,2.5rem);color:#fff}
+    .cta-inner p{color:#ffe5e6;margin-top:8px}
+    .cta-band .btn{background:#fff;color:var(--red)}
+    footer{background:var(--dark);color:#fff;padding:55px 0 22px}
+    .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px;padding-bottom:38px}
+    footer .brand-name{color:#fff}
+    .footer-about{font-size:.86rem;color:#c5c5c5;margin-top:17px;max-width:300px}
+    .footer-col h4{font:800 .9rem Manrope;letter-spacing:0;margin-bottom:16px;color:#fff}
+    .footer-col a{display:block;font-size:.83rem;color:#c6c6c6;margin:9px 0}
+    .footer-col a:hover{color:#fff}
+    .footer-bottom{border-top:1px solid #3c3d3f;padding-top:19px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#aaa;font-size:.78rem}
+    .whatsapp{position:fixed;right:20px;bottom:20px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 8px 25px rgba(0,0,0,.2);font-size:1.55rem;border:3px solid #fff}
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:1050px){.nav-links{gap:12px}.nav-links a{font-size:.77rem}.nav-cta{padding:11px 13px;font-size:.8rem}.hero-inner{gap:28px}.services-grid{grid-template-columns:repeat(2,1fr)}.industries-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:850px){.section{padding:72px 0}.menu-toggle{display:block}.nav-cta{display:none}.nav-links{display:none;position:absolute;left:0;right:0;top:78px;background:#fff;padding:18px 22px 24px;border-bottom:1px solid var(--line);box-shadow:0 20px 25px rgba(0,0,0,.08);flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links li a{display:block;padding:12px 4px;font-size:.95rem}.nav-links li:last-child{padding-top:10px}.nav-links li:last-child a{background:var(--red);color:#fff;text-align:center;border-radius:7px}.hero-inner{grid-template-columns:1fr;max-width:760px}.hero{min-height:auto}.hero-inner{padding:70px 0}.quote-card{max-width:600px}.trust-grid{grid-template-columns:repeat(2,1fr)}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}.trust-item:first-child{padding-left:18px}.about-grid,.network-grid,.contact-grid{grid-template-columns:1fr;gap:38px}.image-stack{max-width:650px}.industries-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr);gap:32px}.process-grid:before{display:none}.gallery-grid{grid-template-rows:160px 160px}.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:560px){.container{width:min(100% - 30px,1160px)}.topbar-inner{justify-content:center}.topbar-left{display:none}.topbar-right{justify-content:center;gap:14px}.nav{height:70px}.brand-mark{width:39px;height:39px}.brand-name{font-size:1rem}.nav-links{top:70px}.hero-inner{padding:54px 0}.hero h1{font-size:2.55rem}.hero-copy>p{font-size:.95rem}.hero-points{display:grid;gap:10px}.quote-card{padding:21px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.trust-item{padding:17px 9px;gap:9px}.trust-item:first-child{padding-left:9px}.icon-box{width:38px;height:38px;flex-basis:38px;font-size:1.05rem}.trust-item strong{font-size:.77rem}.trust-item small{font-size:.68rem}.section{padding:60px 0}.section-head{margin-bottom:30px}.image-stack{padding:0 18px 22px 0}.image-stack .main-image{height:350px}.image-stack .small-image{height:135px;border-width:5px}.image-label{left:12px;bottom:12px;font-size:.72rem}.services-grid,.benefits-grid{grid-template-columns:1fr}.service-image{height:210px}.industries-grid{gap:10px}.industry{min-height:175px}.industry div{left:12px;bottom:12px}.industry h3{font-size:.9rem}.industry p{font-size:.7rem}.process-grid{grid-template-columns:1fr;gap:25px}.process-step{display:grid;grid-template-columns:48px 1fr;column-gap:14px}.step-num{width:45px;height:45px;grid-row:span 2;margin:0}.process-step h3{margin-top:3px}.network-visual{min-height:270px}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:180px 130px 130px}.gallery-item:first-child{grid-column:span 2;grid-row:auto}.contact-info,.contact-form{padding:23px}.cta-inner{align-items:flex-start;flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr;gap:27px 18px}.footer-grid>div:first-child{grid-column:1/-1}.footer-bottom{font-size:.73rem}.whatsapp{width:51px;height:51px;right:14px;bottom:14px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">Dependable freight coordination for business</div>
+      <div class="topbar-right"><span>✉ <a href="mailto:info@shazlogistics.com">info@shazlogistics.com</a></span><span>☎ <a href="tel:+916281783334">+91 62817 83334</a></span></div>
+    </div>
+  </div>
+
+  <header id="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Shaz Logistics home">
+        <span class="brand-mark">S</span><span class="brand-name">Shaz Logistics<span>Moving business forward</span></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#industries">Industries</a></li><li><a href="#network">Our Network</a></li><li><a href="#why-us">Why Choose Us</a></li><li><a href="#contact">Contact Us</a></li>
+        <li><a href="#contact">Get a Freight Quote</a></li>
+      </ul>
+      <a class="btn btn-red nav-cta" href="#contact">Get a Freight Quote <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=85" alt="Freight and logistics warehouse" fetchpriority="high"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Reliable logistics • Dependable movement</span>
+          <h1>Moving Your Cargo. Connecting Your World.</h1>
+          <p>Reliable road freight, full truckload, part truckload, and commercial cargo transportation solutions designed to keep your business moving.</p>
+          <div class="hero-actions"><a class="btn btn-red" href="#contact">Get a Freight Quote <span>↗</span></a><a class="btn btn-outline" href="#services">Explore Our Services <span>↓</span></a></div>
+          <div class="hero-points"><span><b class="check">✓</b> Reliable Cargo Movement</span><span><b class="check">✓</b> Road Freight Solutions</span><span><b class="check">✓</b> Business-Focused Logistics</span></div>
+        </div>
+        <form class="quote-card whatsapp-form" id="hero-form">
+          <h3>Request a Freight Quote</h3><p>Share a few details to start your enquiry.</p>
+          <div class="form-grid">
+            <div class="field"><label for="hero-pickup">Pickup Location *</label><input id="hero-pickup" name="pickup" placeholder="e.g. Jaipur" required></div>
+            <div class="field"><label for="hero-delivery">Delivery Location *</label><input id="hero-delivery" name="delivery" placeholder="e.g. Mumbai" required></div>
+            <div class="field full"><label for="hero-cargo">Type of Cargo *</label><select id="hero-cargo" name="cargo" required><option value="">Select cargo type</option><option>Commercial goods</option><option>Industrial goods</option><option>Building materials</option><option>Packaged goods</option><option>Other</option></select></div>
+            <div class="field full"><label for="hero-phone">Contact Number *</label><input id="hero-phone" name="phone" type="tel" placeholder="+91" pattern="[0-9+() -]{8,18}" required></div>
+          </div>
+          <button class="btn btn-red" type="submit">Request a Quote <span>→</span></button>
+          <div class="form-note">Submitting opens WhatsApp with your enquiry details.</div>
+        </form>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Service highlights"><div class="container trust-grid">
+      <div class="trust-item"><span class="icon-box">↗</span><div><strong>Reliable Freight Solutions</strong><small>Planned around your needs</small></div></div>
+      <div class="trust-item"><span class="icon-box">▣</span><div><strong>Professional Cargo Handling</strong><small>Careful coordination</small></div></div>
+      <div class="trust-item"><span class="icon-box">⇄</span><div><strong>Business Transportation</strong><small>For commercial shipments</small></div></div>
+      <div class="trust-item"><span class="icon-box">♡</span><div><strong>Customer-Focused Service</strong><small>Clear communication</small></div></div>
+    </div></section>
+
+    <section class="section soft" id="about"><div class="container about-grid">
+      <div class="image-stack reveal">
+        <div class="main-image"><img loading="lazy" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1000&q=85" alt="Truck transporting freight on a highway"></div>
+        <div class="small-image"><img loading="lazy" src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=650&q=85" alt="Logistics warehouse and cargo"></div>
+        <div class="image-label">Cargo coordination you can count on</div>
+      </div>
+      <div class="about-copy reveal"><span class="eyebrow">About Shaz Logistics</span><h2>Your Trusted Partner in Cargo Transportation</h2>
+        <p>Shaz Logistics provides transportation and freight solutions designed to help businesses move goods efficiently. From road freight to commercial and industrial cargo, our focus is on dependable coordination, professional handling, and clear communication throughout the transportation process.</p>
+        <p>We work to understand each shipment's requirements and coordinate transportation around agreed terms and confirmed service availability.</p>
+        <ul class="tick-list"><li>Business-focused transportation solutions</li><li>Clear communication from enquiry to delivery coordination</li><li>Freight options shaped around shipment requirements</li><li>A customer-first approach to logistics planning</li></ul>
+        <a class="btn btn-red" href="#services">Discover Our Services <span>→</span></a>
+      </div>
+    </div></section>
+
+    <section class="section" id="services"><div class="container">
+      <div class="section-head reveal"><span class="eyebrow">What we do</span><h2>Logistics Solutions Built Around Your Shipment</h2><p>Explore transportation options for commercial, industrial, and business cargo. Final availability is confirmed when you share your route and shipment details.</p></div>
+      <div class="services-grid">
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?auto=format&fit=crop&w=750&q=80" alt="Heavy goods truck on road"></div><div class="service-content"><div class="service-icon">▰</div><h3>Full Truckload (FTL)</h3><p>Dedicated truck transportation for shipments that need the capacity of an entire vehicle.</p><a class="text-link service-link" href="#contact" data-service="Full Truckload (FTL)">Request Service →</a></div></article>
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=750&q=80" alt="Palletized cargo in a warehouse"></div><div class="service-content"><div class="service-icon">▤</div><h3>Part Truckload (PTL)</h3><p>Options for shipments that do not require a full truck, subject to service availability.</p><a class="text-link service-link" href="#contact" data-service="Part Truckload (PTL)">Request Service →</a></div></article>
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=750&q=80" alt="Freight truck transportation"></div><div class="service-content"><div class="service-icon">⇄</div><h3>Road Freight</h3><p>Cargo movement between cities, industrial areas, warehouses, and commercial destinations.</p><a class="text-link service-link" href="#contact" data-service="Road Freight Transportation">Request Service →</a></div></article>
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=750&q=80" alt="Commercial freight vehicle"></div><div class="service-content"><div class="service-icon">▣</div><h3>Commercial Cargo</h3><p>Transportation support for retailers, distributors, wholesalers, and commercial businesses.</p><a class="text-link service-link" href="#contact" data-service="Commercial Cargo">Request Service →</a></div></article>
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=750&q=80" alt="Industrial warehouse operations"></div><div class="service-content"><div class="service-icon">⚙</div><h3>Industrial Cargo</h3><p>Coordination for industrial goods, equipment, and business consignments based on requirements.</p><a class="text-link service-link" href="#contact" data-service="Industrial Cargo">Request Service →</a></div></article>
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=750&q=80" alt="Shipping containers and cargo"></div><div class="service-content"><div class="service-icon">⌂</div><h3>Domestic Logistics</h3><p>Transportation solutions for goods moving across supported locations within India.</p><a class="text-link service-link" href="#contact" data-service="Domestic Logistics">Request Service →</a></div></article>
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=750&q=80" alt="Transport and cargo vehicles"></div><div class="service-content"><div class="service-icon">◎</div><h3>International Cargo Coordination</h3><p>Freight coordination for international shipping needs, subject to coverage and partners.</p><a class="text-link service-link" href="#contact" data-service="International Cargo Coordination">Request Service →</a></div></article>
+        <article class="service-card reveal"><div class="service-image"><img loading="lazy" src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&w=750&q=80" alt="Distribution and freight operations"></div><div class="service-content"><div class="service-icon">⌁</div><h3>Business Logistics</h3><p>Custom transportation arrangements for recurring freight and distribution requirements.</p><a class="text-link service-link" href="#contact" data-service="Business Logistics Solutions">Request Service →</a></div></article>
+      </div>
+    </div></section>
+
+    <section class="section soft" id="industries"><div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Industries we serve</span><h2>Supporting the Businesses That Keep India Moving</h2><p>Transportation requirements differ by sector. Share your cargo type and route so we can discuss a suitable solution.</p></div>
+      <div class="industries-grid">
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=700&q=80" alt="Manufacturing operations"><div><h3>Manufacturing & Industry</h3><p>Industrial goods and equipment</p></div></article>
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=700&q=80" alt="Wholesale warehouse"><div><h3>Wholesale & Distribution</h3><p>Goods moving between businesses</p></div></article>
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1607082349566-187342175e2f?auto=format&fit=crop&w=700&q=80" alt="Retail packages and goods"><div><h3>Retail & E-commerce</h3><p>Commercial goods and parcels</p></div></article>
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=700&q=80" alt="Construction and building materials"><div><h3>Building Materials</h3><p>Construction-related cargo</p></div></article>
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=700&q=80" alt="Automotive parts and service"><div><h3>Automotive & Spare Parts</h3><p>Components and supplies</p></div></article>
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=700&q=80" alt="Packaged consumer goods"><div><h3>Consumer Goods</h3><p>Packaged goods and supplies</p></div></article>
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?auto=format&fit=crop&w=700&q=80" alt="Warehouse storage and supply chain"><div><h3>Warehousing & Supply Chain</h3><p>Freight and distribution coordination</p></div></article>
+        <article class="industry reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=700&q=80" alt="Agricultural fields"><div><h3>Agricultural Goods</h3><p>Where cargo and routes are supported</p></div></article>
+      </div>
+    </div></section>
+
+    <section class="section beige"><div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Simple process</span><h2>From Freight Enquiry to Delivery Coordination</h2><p>A straightforward process keeps shipment requirements clear at every stage.</p></div>
+      <div class="process-grid">
+        <article class="process-step reveal"><div class="step-num">01</div><h3>Share Your Requirements</h3><p>Provide pickup, destination, cargo details, and preferred dates.</p></article>
+        <article class="process-step reveal"><div class="step-num">02</div><h3>Receive a Freight Quote</h3><p>Your shipment requirements are reviewed for a suitable quotation.</p></article>
+        <article class="process-step reveal"><div class="step-num">03</div><h3>Coordinate Transportation</h3><p>Transportation is scheduled around confirmed availability and agreed terms.</p></article>
+        <article class="process-step reveal"><div class="step-num">04</div><h3>Delivery Coordination</h3><p>Relevant delivery communication is provided according to the agreed service.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section" id="why-us"><div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Why Shaz Logistics</span><h2>Practical Support for Your Transportation Needs</h2><p>Our approach focuses on clear coordination, shipment-specific planning, and business-friendly communication.</p></div>
+      <div class="benefits-grid">
+        <article class="benefit reveal"><span class="icon-box">♡</span><h3>Customer-Focused Coordination</h3><p>We start by understanding your cargo, route, and delivery requirements.</p></article>
+        <article class="benefit reveal"><span class="icon-box">⇄</span><h3>Road Freight & Cargo Options</h3><p>Discuss suitable freight options for your shipment and destination.</p></article>
+        <article class="benefit reveal"><span class="icon-box">⌁</span><h3>Flexible Requirements</h3><p>Share your specific shipment needs for a route and service review.</p></article>
+        <article class="benefit reveal"><span class="icon-box">☏</span><h3>Clear Communication</h3><p>Enquiries and agreed shipment details are handled with a focus on clarity.</p></article>
+        <article class="benefit reveal"><span class="icon-box">⚙</span><h3>Business & Industrial Cargo</h3><p>Transportation discussions for commercial and industrial consignments.</p></article>
+        <article class="benefit reveal"><span class="icon-box">₹</span><h3>Quotation Support</h3><p>Share route, cargo, and timing details to request a tailored quote.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section soft" id="network"><div class="container network-grid">
+      <div class="network-visual reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=1000&q=85" alt="Cargo containers at a freight terminal"><div class="network-caption"><strong>Connecting Businesses Through Reliable Transportation</strong><span>Routes and coverage confirmed on enquiry</span></div></div>
+      <div class="reveal"><span class="eyebrow">Our network</span><h2>Let's Discuss Your Route</h2><p style="margin-top:15px">Tell us where your shipment starts, where it needs to go, and what you're moving. We'll review the route and confirm whether the requested service is available.</p>
+        <ul class="tick-list"><li>Domestic transportation enquiries</li><li>Route planning and freight coordination</li><li>Commercial and industrial cargo requirements</li><li>International cargo enquiries where supported</li></ul>
+        <form class="route-form whatsapp-form" id="route-form"><div class="form-grid">
+          <div class="field"><label for="route-from">From City *</label><input id="route-from" name="from" placeholder="Pickup city" required></div>
+          <div class="field"><label for="route-to">To City *</label><input id="route-to" name="to" placeholder="Delivery city" required></div>
+          <div class="field"><label for="route-cargo">Cargo Type *</label><select id="route-cargo" name="cargo" required><option value="">Select type</option><option>Commercial goods</option><option>Industrial goods</option><option>Building materials</option><option>Other</option></select></div>
+          <div class="field"><label for="route-date">Estimated Shipment Date</label><input id="route-date" name="date" type="date"></div>
+        </div><button class="btn btn-red" type="submit" style="width:100%;margin-top:14px">Check Service Availability →</button></form>
+      </div>
+    </div></section>
+
+    <section class="section"><div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Operations gallery</span><h2>A Closer Look at Logistics in Motion</h2><p>Representative freight, cargo, and transportation imagery.</p></div>
+      <div class="gallery-grid">
+        <div class="gallery-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=85" alt="Freight truck on a highway"><span>Road Freight</span></div>
+        <div class="gallery-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=650&q=80" alt="Shipping containers"><span>Cargo Containers</span></div>
+        <div class="gallery-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&w=650&q=80" alt="Warehouse goods"><span>Warehouse Operations</span></div>
+        <div class="gallery-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=650&q=80" alt="Cargo handling"><span>Cargo Handling</span></div>
+        <div class="gallery-item reveal"><img loading="lazy" src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=650&q=80" alt="Distribution centre"><span>Distribution</span></div>
+      </div>
+    </div></section>
+
+    <section class="section beige" id="contact"><div class="container contact-grid">
+      <aside class="contact-info reveal"><span class="eyebrow" style="color:#ffb8bc">Get in touch</span><h3>Let's Move Your Business Forward</h3><p>Have a shipment in mind? Share your requirements and contact Shaz Logistics to discuss next steps.</p>
+        <div class="contact-detail"><span class="icon-box">☎</span><div><strong>Call / WhatsApp</strong><a href="tel:+916281783334">+91 62817 83334</a><a href="https://wa.me/916281783334" target="_blank" rel="noopener">Chat on WhatsApp ↗</a></div></div>
+        <div class="contact-detail"><span class="icon-box">✉</span><div><strong>Email</strong><a href="mailto:info@shazlogistics.com">info@shazlogistics.com</a><span>Replace with the company's verified email if different.</span></div></div>
+        <div class="contact-detail"><span class="icon-box">⌖</span><div><strong>Service coverage</strong><span>Coverage is confirmed for each route and shipment enquiry.</span></div></div>
+      </aside>
+      <form class="contact-form whatsapp-form reveal" id="contact-form">
+        <h3>Get a Custom Freight Quote</h3><p>Tell us about your shipment and we'll prepare an enquiry message for our team.</p>
+        <div class="form-grid">
+          <div class="field"><label for="full-name">Full Name *</label><input id="full-name" name="Full name" placeholder="Your name" required autocomplete="name"></div>
+          <div class="field"><label for="company">Company Name</label><input id="company" name="Company" placeholder="Your company (optional)" autocomplete="organization"></div>
+          <div class="field"><label for="phone">Phone Number *</label><input id="phone" name="Phone" type="tel" placeholder="+91 98765 43210" pattern="[0-9+() -]{8,18}" required autocomplete="tel"></div>
+          <div class="field"><label for="email">Email Address</label><input id="email" name="Email" type="email" placeholder="you@company.com" autocomplete="email"></div>
+          <div class="field"><label for="pickup">Pickup City *</label><input id="pickup" name="Pickup city" placeholder="Pickup location" required></div>
+          <div class="field"><label for="delivery">Delivery City *</label><input id="delivery" name="Delivery city" placeholder="Delivery location" required></div>
+          <div class="field"><label for="cargo">Type of Cargo *</label><select id="cargo" name="Cargo type" required><option value="">Select cargo type</option><option>Commercial goods</option><option>Industrial goods</option><option>Building materials</option><option>Automotive parts</option><option>Packaged goods</option><option>Agricultural goods</option><option>Other</option></select></div>
+          <div class="field"><label for="weight">Approx. Weight / Shipment Size</label><input id="weight" name="Weight or shipment size" placeholder="e.g. 2 tonnes / 10 pallets"></div>
+          <div class="field"><label for="date">Preferred Pickup Date</label><input id="date" name="Preferred pickup date" type="date"></div>
+          <div class="field"><label for="transport">Transportation Type *</label><select id="transport" name="Transportation type" required><option value="">Choose type</option><option>FTL</option><option>PTL</option><option>Other / Need advice</option></select></div>
+          <div class="field full"><label for="details">Additional Shipment Details</label><textarea id="details" name="Additional details" placeholder="Cargo dimensions, handling needs, preferred timings, etc."></textarea></div>
+        </div>
+        <button class="btn btn-red" type="submit">Send Enquiry on WhatsApp <span>↗</span></button>
+        <p class="form-note">Your details are placed into a WhatsApp message; this demo does not store submissions in a database.</p><p class="form-status" aria-live="polite" id="contact-status"></p>
+      </form>
+    </div></section>
+
+    <section class="cta-band"><div class="container cta-inner"><div><h2>Have Cargo to Move?</h2><p>Start with your route and shipment details. We'll take it from there.</p></div><a class="btn" href="#contact">Discuss Your Shipment <span>↗</span></a></div></section>
+  </main>
+
+  <footer><div class="container">
+    <div class="footer-grid">
+      <div><a class="brand" href="#home"><span class="brand-mark">S</span><span class="brand-name">Shaz Logistics<span>Moving business forward</span></span></a><p class="footer-about">Road freight, cargo transportation, and business logistics enquiries—coordinated around your shipment requirements.</p></div>
+      <div class="footer-col"><h4>Quick Links</h4><a href="#about">About Us</a><a href="#services">Our Services</a><a href="#industries">Industries</a><a href="#network">Our Network</a></div>
+      <div class="footer-col"><h4>Services</h4><a href="#services">Full Truckload (FTL)</a><a href="#services">Part Truckload (PTL)</a><a href="#services">Road Freight</a><a href="#services">Business Logistics</a></div>
+      <div class="footer-col"><h4>Contact</h4><a href="tel:+916281783334">+91 62817 83334</a><a href="https://wa.me/916281783334" target="_blank" rel="noopener">WhatsApp Us</a><a href="mailto:info@shazlogistics.com">Email Us</a><a href="#contact">Request a Quote</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Shaz Logistics. All rights reserved.</span><span>Freight enquiries • Route availability confirmed on request</span></div>
+  </div></footer>
+
+  <a class="whatsapp" href="https://wa.me/916281783334" target="_blank" rel="noopener" aria-label="Chat with Shaz Logistics on WhatsApp" title="Chat on WhatsApp">◉</a>
+
+  <script>
+    (() => {
+      "use strict";
+      const WHATSAPP_NUMBER = "916281783334"; // Country code + number, digits only.
+      const header = document.getElementById("site-header");
+      const menuToggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("scrolled", window.scrollY > 8);
+      }, { passive: true });
+
+      menuToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+        menuToggle.textContent = open ? "✕" : "☰";
+      });
+
+      navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open navigation menu");
+          menuToggle.textContent = "☰";
+        });
+      });
+
+      // Lightweight reveal-on-scroll effect; content stays visible if IntersectionObserver is unavailable.
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+      } else {
+        document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+      }
+
+      function openWhatsApp(form, intro) {
+        if (!form.reportValidity()) return;
+        const data = new FormData(form);
+        const lines = [intro, ""];
+        for (const [key, value] of data.entries()) {
+          if (String(value).trim()) lines.push(`${key}: ${String(value).trim()}`);
+        }
+        lines.push("", "Please confirm service availability and share a quotation.");
+        const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`;
+        window.open(url, "_blank", "noopener,noreferrer");
+        const status = document.getElementById("contact-status");
+        if (status && form.id === "contact-form") {
+          status.textContent = "WhatsApp opened with your enquiry details. Send the message there to complete your enquiry.";
+        }
+      }
+
+      document.getElementById("hero-form").addEventListener("submit", event => {
+        event.preventDefault();
+        openWhatsApp(event.currentTarget, "Hello Shaz Logistics, I would like a freight quote.");
+      });
+
+      document.getElementById("route-form").addEventListener("submit", event => {
+        event.preventDefault();
+        openWhatsApp(event.currentTarget, "Hello Shaz Logistics, please check service availability for this route.");
+      });
+
+      document.getElementById("contact-form").addEventListener("submit", event => {
+        event.preventDefault();
+        openWhatsApp(event.currentTarget, "Hello Shaz Logistics, I would like a custom freight quote.");
+      });
+
+      document.querySelectorAll(".service-link").forEach(link => {
+        link.addEventListener("click", () => {
+          const service = link.dataset.service;
+          const transport = document.getElementById("transport");
+          if (service.includes("Full Truckload")) transport.value = "FTL";
+          else if (service.includes("Part Truckload")) transport.value = "PTL";
+          else transport.value = "Other / Need advice";
+          document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+        });
+      });
+
+      // Prevent choosing dates in the past for the enquiry forms.
+      const today = new Date();
+      const localDate = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+      ["route-date", "date"].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) input.min = localDate;
+      });
+    })();
+  </script>
+</body>
+</html>
